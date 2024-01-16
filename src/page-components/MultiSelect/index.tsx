@@ -46,6 +46,21 @@ const MultiSelect: React.FC<{ data: DataItem[] }> = ({ data }) => {
         setSearch('');
     }
 
+    const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e?.key === "Backspace" && search === "" && selectedOptions.length > 0) {
+            if(chipClick?.id) {
+                const newSelectedOptions = selectedOptions.slice(0, -1);
+                const selectedIds = newSelectedOptions?.map((item) => item?.id);
+                const newOptions = data?.filter((item) => !selectedIds?.includes(item?.id));
+                setOptions(newOptions);
+                setSelectedOptions(newSelectedOptions);
+                setChipClick({id: 0});
+            } else {
+                setChipClick(selectedOptions[selectedOptions.length - 1]);
+            }
+        }
+    };
+
     useEffect(() => {
         const debounceSearch = () => {
             const selectedIds = selectedOptions?.map((item) => item?.id);
@@ -81,6 +96,7 @@ const MultiSelect: React.FC<{ data: DataItem[] }> = ({ data }) => {
                     value={search} 
                     onChange={(e) => setSearch(e.target.value)}
                     onClick={() => setClicked(true)}
+                    onKeyDown={handleInputKeyDown}
                 />
             </div>
             <div onClick={(e) => handleDropDown(e)} 

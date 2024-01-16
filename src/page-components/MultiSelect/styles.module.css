@@ -55,6 +55,7 @@
 
 .input_field {
     border: none;
+    width: 200px;
 }
 
 .input_field:focus {
