@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "vunguyentuan.vscode-postcss",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint"
+    ]
+}

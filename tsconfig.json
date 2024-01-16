@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "jsx": "react",
+      "esModuleInterop": true,
+      "plugins": [{ "name": "typescript-plugin-css-modules" }],
+      "paths": {
+        "*": ["*", "src/*"]
+      }
+      // other options...
+    }
+    // other configurations...
+  }
+  
