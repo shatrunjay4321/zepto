@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     border: solid 1px #efc7f7;
-    border-radius: 8px;
+    border-radius: 20px;
     height: fit-content;
     margin: 8px;
     padding: 5px;
@@ -42,8 +42,25 @@
     background-color: #efc7f7;
 }
 
+.chip_left {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .chip_right {
     margin-left: 10px;
+}
+
+.input_field {
+    border: none;
+    width: 200px;
+}
+
+.input_field:focus {
+    outline: none;
+    border: none;
 }
 
 .empty_state {
@@ -76,6 +93,7 @@
     cursor: pointer;
     border-bottom: solid 0.5px #ededed;
     padding: 15px;
+    font-size: 12px;
 }
 
 .option:hover {
